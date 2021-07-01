@@ -1,4 +1,7 @@
 <li>
+   {% if post.redirect_url %}
+      {% capture post.url %}{{ post.redirect_url" }}{% endcapture %}
+   {% endif %}
   <a href="{{ post.url | absolute_url }}" class="post-link">
     <div class="post-link__heading">
       {% unless post.title == "" %}
